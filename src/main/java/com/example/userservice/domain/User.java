@@ -11,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@ToString
 @Table(name="users")
 public class User {
     @Id
@@ -18,13 +19,15 @@ public class User {
     private Long id;
     private String firstName;
     private String lastName;
+    private String username;
     private String email;
     private String phoneNumber;
-    @Embedded
-    private Address address;
-    @OneToMany
-    @JoinTable
-    private List<UserRole> roles=new ArrayList<>();
+    private String password;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<Address> addresses=new ArrayList<>();
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private UserRole role;
+
 
 
 }

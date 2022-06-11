@@ -1,16 +1,14 @@
 package com.example.userservice.controllers;
 
-import com.example.userservice.domain.User;
 import com.example.userservice.dto.UserDto;
 import com.example.userservice.service.UserService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/users")
+@RequestMapping(value = "/api/v1/users")
 public class UserController {
 
     @Resource

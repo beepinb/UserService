@@ -16,6 +16,7 @@ import javax.persistence.*;
 @Table(name = "roles")
 public class UserRole {
     @Id
+    @GeneratedValue
     private Long id;
     @Enumerated(EnumType.STRING)
     private RoleType name;
