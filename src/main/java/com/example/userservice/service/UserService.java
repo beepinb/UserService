@@ -7,7 +7,8 @@ import com.example.userservice.dto.response.LoginResponse;
 
 import java.util.List;
 
-public interface UserService extends BaseService<UserDto,Long> {
+public interface UserService extends BaseService<UserDto,User,Long> {
     LoginResponse login(LoginRequest loginRequest);
+    UserDto findUserDetails(Long id);
 
 }
